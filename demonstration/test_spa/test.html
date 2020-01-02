@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <h1>login</h1>
+    </div>
+    <input type="button" value="1">
+    <input type="button" value="2">
+    <input type="button" value="3">
+    <script>
+        window.onhashchange = function(){
+            const hash = location.hash;
+            switch(hash){
+                case "#/login":root.innerHTML = `<h1>login</h1>`;break;
+                case "#/regist":root.innerHTML = `<h2>regist</h2>`;break;
+                case "#/main":root.innerHTML = `<h3>main</h3>`;break;
+            }
+        }
+        document.querySelectorAll("input")[0].onclick = ()=>location.hash = "/login";
+        document.querySelectorAll("input")[1].onclick = ()=>location.hash = "/regist";
+        document.querySelectorAll("input")[2].onclick = ()=>location.hash = "/main";
+    
+    </script>
+</body>
+</html>
